@@ -2,7 +2,7 @@
 function StationData({data}) {
     return (
         <div className="pl-5 text-2xl text-white bg-blue-900">
-            Weather in {data.properties?.relativeLocation.properties.city}, 
+            {data.properties?.relativeLocation.properties.city}, 
              {data.properties?.relativeLocation.properties.state}
         </div>
     );
