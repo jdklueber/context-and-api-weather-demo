@@ -7,8 +7,8 @@ function HourlyPeriod({data}) {
 
 
     return (
-        <div>
-            <Subhead>{hour.format("HH:MM")}</Subhead>
+        <div className="mb-5">
+            <Subhead>{hour.format("dddd HH:MM")}</Subhead>
             <DataPoint label="Temp" data={data.temperature}/>
             <DataPoint label="Forecast" data={data.shortForecast}/>
             
