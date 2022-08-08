@@ -4,14 +4,7 @@ const WeatherContext = React.createContext();
 const latLongUrl = "https://api.weather.gov/points/"
 
 function WeatherProvider({children}) {
-    const [currentStationData, setCurrentStationData] = useState({
-        relativeLocation: {
-            properties: {
-                city: "UNKNOWN",
-                state: "UNKNOWN"
-            }    
-        }
-    });
+    const [currentStationData, setCurrentStationData] = useState({ });
     const [currentPayload, setCurrentPayload] = useState({})
 
     useEffect( () => {
