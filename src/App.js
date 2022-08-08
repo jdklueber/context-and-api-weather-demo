@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import {useContext} from "react";
+import { WeatherContext } from "./context/WeatherContext";
 
 function App() {
+  const weatherContext = useContext(WeatherContext);
+
+  const clickHandler = () => {
+      weatherContext.queryLatLongForStation("38.2527","-85.7585");
+  }
+  const forecastHandler = () => {
+    weatherContext.queryForecast();
+  }
+
+  const forecastHourlyHandler = () => {
+    weatherContext.queryHourly();
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <button onClick={clickHandler}>Query LatLong</button><br/>
+        <button onClick={forecastHandler}>Query Forecast</button><br/>
+        <button onClick={forecastHourlyHandler}>Query Hourly</button><br/>
+        <h1>Station Data</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+            {JSON.stringify(weatherContext.currentStationData)}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>Forecast Data</h1>
+        <p>
+          {JSON.stringify(weatherContext.currentPayload)}
+        </p>
     </div>
   );
 }

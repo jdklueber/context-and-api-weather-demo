@@ -1,0 +1,16 @@
+### Get details for lat/long
+GET https://api.weather.gov/points/38.2527,-85.7585
+Content-Type: application/json
+
+
+### Forecast
+GET https://api.weather.gov/gridpoints/LMK/49,77/forecast
+Content-Type: application/json
+
+
+
+1.  Get lat / long input
+2.  Call first API above with appropriate lat/long (W or S = -)
+3.  Look for properties.forecast and properties.forecastHourly for 
+    specific API calls.
+4.  Display above
