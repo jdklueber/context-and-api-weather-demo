@@ -4,17 +4,18 @@ const WeatherContext = React.createContext();
 const latLongUrl = "https://api.weather.gov/points/"
 
 function WeatherProvider({children}) {
-    const [currentStationData, setCurrentStationData] = useState({});
+    const [currentStationData, setCurrentStationData] = useState({
+        relativeLocation: {
+            properties: {
+                city: "UNKNOWN",
+                state: "UNKNOWN"
+            }    
+        }
+    });
     const [currentPayload, setCurrentPayload] = useState({})
-
-    useEffect( () => {
-        queryLatLongForStation("38.2527","-85.7585");
-    })
 
     const queryLatLongForStation = (lat, long) => {
         const url = latLongUrl + lat + "," + long;
-        console.log(url, 
-            {"content-type": "application/json", "user-agent": "weather api demo"});
         fetch(url)
         .then((response) => response.json())
         .then((data) => setCurrentStationData(data))

@@ -4,6 +4,8 @@ import { WeatherContext } from "./context/WeatherContext";
 function App() {
   const weatherContext = useContext(WeatherContext);
 
+
+
   const clickHandler = () => {
       weatherContext.queryLatLongForStation("38.2527","-85.7585");
   }
