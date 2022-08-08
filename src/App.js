@@ -6,6 +6,7 @@ import { WeatherContext } from "./context/WeatherContext";
 import Button from "./components/Button";
 import LatLongInput from "./components/LatLongInput";
 import Header from "./components/Header";
+import Container from "./components/Container";
 
 function App() {
   const weatherContext = useContext(WeatherContext);
@@ -43,12 +44,15 @@ function App() {
   return (
     <div className="App">
         <Header>Weather Checker</Header>
-        <Button onClick={clickHandler} label="Query Lat/Long"/>
-        <Button onClick={forecastHandler} label="Query Forecast"/>
-        <Button onClick={forecastHourlyHandler} label="Query Hourly"/>
+        <Container>
+          <Button onClick={clickHandler} label="Query Lat/Long"/>
+          <Button onClick={forecastHandler} label="Query Forecast"/>
+          <Button onClick={forecastHourlyHandler} label="Query Hourly"/>
         <LatLongInput lat={lat} long={long} setLat={setLat} setLong={setLong}/>
+        </Container>
         <StationData data={weatherContext.currentStationData}/>
         {getView()}        
+
     </div>
   );
 }
