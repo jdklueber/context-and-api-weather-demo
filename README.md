@@ -13,3 +13,4 @@
 ## Useful Links:
 * Fetch Documentation:  https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 * Hooks (useContext, useEffect): https://reactjs.org/docs/hooks-reference.html
+* Publicly accessible APIs:  https://github.com/public-apis/public-apis

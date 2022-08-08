@@ -14,6 +14,10 @@ function WeatherProvider({children}) {
     });
     const [currentPayload, setCurrentPayload] = useState({})
 
+    useEffect( () => {
+        queryLatLongForStation("38.2527","-85.7585");
+    })
+
     const queryLatLongForStation = (lat, long) => {
         const url = latLongUrl + lat + "," + long;
         fetch(url)
