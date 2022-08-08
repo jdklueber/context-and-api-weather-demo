@@ -3,7 +3,7 @@ import Header from "./Header";
 function ForecastView({data}) {
     return (
         <div>
-            <Header>Forecast</Header>
+            <Header>Weekly Forecast</Header>
             {data.properties?.periods.map(p => <ForecastPeriod data={p}/>)}
         </div>
     )
