@@ -4,7 +4,7 @@ Content-Type: application/json
 
 
 ### Forecast
-GET https://api.weather.gov/gridpoints/LMK/49,77/forecast
+GET https://api.weather.gov/gridpoints/LMK/49,77/forecast/hourly
 Content-Type: application/json
 
 
